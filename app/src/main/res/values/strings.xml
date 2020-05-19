@@ -3,4 +3,13 @@
     <string name="nav_today_title">Today</string>
     <string name="nav_future_weather_title">7 Days</string>
     <string name="nav_settings_title">Settings</string>
+    <string name="loading">Loading</string>
+    <string name="image_for_condition">image for condition</string>
+    <string name="use_device_location_summary">The App requests to use your gps location for features.</string>
+    <string name="use_device_location_title">User Device Location</string>
+    <string name="use_device_location_key">USE_DEVICE_LOCATION</string>
+    <string name="use_custom_location_title">Use Custom location</string>
+    <string name="use_custom_location_summary">Use the name of the location as primary device location</string>
+    <string name="use_custom_location_key">USE_CUSTOM_LOCATION</string>
+    <string name="use_custom_location_default">London</string>
 </resources>

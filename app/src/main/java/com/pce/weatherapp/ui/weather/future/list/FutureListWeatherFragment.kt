@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.pce.weatherapp.R
+import com.pce.weatherapp.base.ScopedFragment
+import kotlinx.coroutines.launch
 
-class FutureListWeatherFragment : Fragment() {
-
-    companion object {
-        fun newInstance() =
-            FutureListWeatherFragment()
-    }
+class FutureListWeatherFragment : ScopedFragment() {
 
     private lateinit var viewModel: FutureListWeatherViewModel
 
@@ -27,7 +24,18 @@ class FutureListWeatherFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(FutureListWeatherViewModel::class.java)
-        // TODO: Use the ViewModel
+        bindView()
+    }
+
+    private fun bindView() = launch {
+        updateActionBar("London")
+    }
+
+    private fun updateActionBar(location: String) {
+        with((activity as? AppCompatActivity)?.supportActionBar) {
+            this?.title = location
+            this?.subtitle = "7 days"
+        }
     }
 
 }
